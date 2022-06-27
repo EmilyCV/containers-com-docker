@@ -1,0 +1,11 @@
+machine:
+  services:
+      - docker
+dependencies:
+  override:
+      - docker build -t infoslack/docker-book .
+deployment:
+  production:
+  branch: master
+    commands:
+      - sudo ./deploy.sh
